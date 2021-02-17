@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 // Crear esquema
-const ProductSchema = new mongoose.Schema( {
+const ProductSchema = new mongoose.Schema({
     name: {
         type: String,
         unique: true,
@@ -16,7 +16,7 @@ const ProductSchema = new mongoose.Schema( {
     category: {
         type: String,
         required: true,
-        enum: ['Hogar', 'Entretenimiento', 'Electrónica', 'Tecnología', 'Oficina']
+        enum: ['Celulares', 'Hogar', 'Entretenimiento', 'Oficina', 'Deportes', 'Accesorios', "Tecnología"]
     },
     stock: {
         type: Number,
@@ -29,6 +29,6 @@ const ProductSchema = new mongoose.Schema( {
 });
 
 // Convertir el esquema en un modelo
-const Product = mongoose.model('Product', ProductSchema);
+const Product = mongoose.model('Product',ProductSchema);
 
 module.exports = Product;
